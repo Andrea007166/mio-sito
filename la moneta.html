@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+<title>La Moneta</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+body {
+	font-family: sans;
+}
+code {
+	background-color: lightgray;
+	font-family: monospace;
+	font-size: larger;
+	padding: 0.1em;
+}
+dfn {
+	border: red solid;
+	font-family: monospace;
+	font-size: larger;
+	font-style: normal;
+	padding: 0.1em;
+}
+em {
+	font-family: serif;
+}
+figure, figcaption {
+	text-align: center;
+}
+footer {
+	background-color: red;
+	border: solid thin;
+	bottom: 0em;
+	padding: 1em;
+	position: sticky;
+}
+i {
+	color: teal;
+}
+li {
+	margin-bottom: 1em;
+}
+li.example {
+	list-style-type: "💡";
+	margin-left: 1em;
+}
+main {
+	line-height: 2em;
+}
+main nav {
+	position: sticky;
+	text-align: right;
+	top: 2em;
+}
+main nav a {
+	background-color: #80ffff80;
+	padding: 1em;
+}
+mark {
+	background-color: inherit;
+	color: rgb(255, 170, 0);
+}
+nav a:link, nav a:visited {
+	text-decoration: none;
+}
+pre, table {
+	border: solid thin;
+	border-collapse: collapse;
+	line-height: 1.5em;
+	margin: 0.5em;
+	padding: 0.5em;
+	text-align: left;
+}
+tr, td, th {
+	border: solid thin;
+	margin: 0.5em;
+	padding: 0.5em;
+}
+pre, table {
+	border: solid thin;
+	border-collapse: collapse;
+	line-height: 1.5em;
+	margin: 0.5em;
+	padding: 0.5em;
+	text-align: left;
+}
+tr, td, th {
+	border: solid thin;
+	margin: 0.5em;
+	padding: 0.5em;
+}
+#fig-layout table, #fig-layout tr, #fig-layout td {
+	border: none;
+}
+
+/* Nuovi stili per migliorare l'estetica */
+h1 {
+    color: #2a6598;
+    font-family: 'Arial', sans-serif;
+    text-shadow: 1px 1px 2px #aaa;
+}
+ul {
+    padding-left: 20px;
+}
+li {
+    margin-bottom: 0.5em;
+}
+/* Pulsante per tornare all'inizio */
+#back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+#back-to-top:hover {
+    background-color: #0056b3;
+}
+</style>
+
+<script>
+function writeIndex() {
+	let indexFrame = document.getElementById("index");
+	indexFrame.innerHTML = "<p><b>Indice</b>";
+	let i = 0, j = 0;
+	for (const it of document.querySelectorAll("H1, H2")) {
+		const text = it.innerText.trim();
+		it.id = text.replaceAll(" ", "_");
+		if (it.tagName === "H2") {
+			it.innerText = i + "." + (++j) + " - " + text;
+		} else {
+			it.innerText = (++i) + " - " + text;
+			j = 0;
+		}
+		indexFrame.innerHTML += "<p><a href=#" + it.id + ">" + it.innerText + "</a>";
+	}
+}
+function writeTagLabels(tag, prefix) {
+	let i = 1;
+	for (const it of document.getElementsByTagName(tag)) {
+		it.title = i;
+		it.innerHTML = prefix + " " + (i++) + " — " + it.innerHTML;
+	}
+}
+window.onload = function () {
+	writeIndex();
+	writeTagLabels("figcaption", "Figura");
+};
+
+</script>
+</head>
+<body>
+	
+<header style="font-size:xxx-large;text-align:center;">
+<mark>La Moneta</mark>
+</header>
+<nav id="index"></nav>
+
+<main>
+
+<nav><a href="#index" title="Torna all'indice">Indice</a></nav>
+<td></td>
+<HR>
+
+<h1>La nascita e i vari problemi</h1>
+La <mark><dfn>moneta</dfn></mark> è nata come strumento per facilitare gli scambi economici tra le persone, risolvendo i limiti e le inefficienze del baratto.
+<p>
+</p>
+<img src="img/baratto.png" alt="baratto">
+<figcaption>Scambio di merce.</figcaption>
+<br>
+Il baratto, presentava diversi problemi:
+<br>
+<dfn><b>Doppia coincidenza dei bisogni</b></dfn>: Per concludere uno scambio, entrambe le parti dovevano desiderare esattamente ciò che l'altra offriva nello stesso momento.
+<br>
+<dfn><b>Difficoltà di valutazione</b></dfn>: Non era facile determinare un valore equo tra beni diversi (ad esempio, quanti sacchi di grano valgono una mucca?).
+<br>
+<dfn><b>Impossibilità di conservare valore</b></dfn>: Alcuni beni scambiati nel baratto, come cibo o animali, si deterioravano con il tempo.
+<br>
+Per superare queste difficoltà, le comunità iniziarono a usare <dfn>beni intermedi</dfn>, come metalli preziosi, conchiglie, pietre o altri oggetti riconosciuti come aventi valore. Questi beni facilitavano gli scambi poiché erano:
+<ul>
+	<li><b>Universalmente accettati.</b></li>
+	<li><b>Più facili da trasportare.</b></li>
+	<li><b>Relativamente stabili nel tempo.</b></li>
+</ul>
+
+<h1>Introduzione della moneta metallica</h1>
+Con il tempo, i metalli come oro, argento e rame si imposero per la loro durabilità, divisibilità e rarità. Intorno al VII secolo a.C., furono coniate le prime <dfn>monete metalliche</dfn>, con un valore garantito da un'autorità centrale. Questo ha reso la moneta:
+<ul>
+	<li>Standardizzata.</li>
+	<li>Riconoscibile e accettata su larga scala.</li>
+	<li>Garantita per autenticità e valore.</li>
+</ul>
+<p>
+</p>
+<img src="img/monete.jpg" alt="Moneta" width="500">
+<figcaption>Monete metalliche.</figcaption>
+<br>
+La moneta non era più solo un mezzo di scambio, ma anche:
+<ul>
+	<li><dfn>Riserva di valore</dfn>:Poteva essere accumulata e usata in futuro.
+	<li><dfn>Unità di conto</dfn>:Permetteva di misurare il valore di beni e servizi in modo univoco, semplificando la contabilità e la pianificazione economica.
+</ul>
+
+<h1>Evoluzione della moneta</h1>
+Con il passare dei secoli, la moneta si è evoluta:
+<ul>
+	<li><dfn>Moneta cartacea</dfn>:Introdotta per comodità e sicurezza, inizialmente rappresentava metalli preziosi, ma poi divenne a <dfn>corso forzoso</dfn>, sostenuta dalla fiducia nello Stato.</li>
+	<p>
+	</p>
+	<img src="img/banconota.png" alt="Moneta cartacea">
+	<figcaption>Monete cartacea.</figcaption>
+	<br>
+	<li><dfn>Moneta elettronica e digitale</dfn>:Con l'avvento della tecnologia, la moneta è sempre meno fisica, passando a forme digitali (bancomat, criptovalute, ecc.), pur mantenendo le sue funzioni originali.</li>
+	<p>
+	</p>
+	<img src="img/Moneta elettronica.jpg" alt="Moneta elettronica" width="500">
+	<figcaption>Monete elettronica e digitale.</figcaption>
+</ul>
+
+<h1>Valore della moneta</h1>
+La differenza tra <dfn>valore nominale e valore reale</dfn> è fondamentale per comprendere concetti economici e finanziari, in quanto entrambi rappresentano il valore di un bene o una somma di denaro.
+<li><dfn>Valore Nominale</dfn>:Il valore nominale è il valore espresso in <dfn>unità monetarie correnti</dfn>, senza considerare fattori esterni come l'inflazione o il potere d'acquisto.</li>
+<li><dfn>Valore Reale</dfn>:Il valore reale rappresenta il valore effettivo di una somma di denaro o di un bene, considerando il <dfn>potere d'acquisto</dfn> e <dfn>l'inflazione.</dfn></li>
+
+<h1>Inflazione e deflazione</h1>
+L'inflazione è un <dfn>aumento generale e persistente dei prezzi</dfn> di beni e servizi in un periodo di tempo. Quando c'è inflazione, il potere d'acquisto del denaro diminuisce: con la stessa somma di denaro si possono acquistare meno beni o servizi.
+<br>
+La deflazione è una <dfn>diminuzione generale e persistente dei prezzi</dfn> di beni e servizi. Contrariamente all'inflazione, con la deflazione il potere d'acquisto del denaro aumenta: con la stessa somma di denaro si possono acquistare più beni o servizi.
+
+
+<h1>Funzioni della moneta</h1>
+La moneta svolge tre funzioni principali nell'economia:
+<ul>
+    <li><b>Mezzo di scambio:</b> Facilita le transazioni economiche eliminando la necessità del baratto.</li>
+    <li><b>Unità di conto:</b> Permette di misurare il valore di beni e servizi in termini comuni.</li>
+    <li><b>Riserva di valore:</b> Consente di accumulare ricchezza da utilizzare in futuro.</li>
+</ul>
+
+<h1>Curiosità sulla storia della moneta</h1>
+Le principali curiosità sulla <b>storia</b> della <dfn>moneta</dfn>:
+<ul>
+    <li>La parola "moneta" deriva dal latino <i>Moneta</i>, un titolo attribuito a Giunone, la dea protettrice delle finanze romane.</li>
+    <li>Nel Medioevo, le monete erano spesso tagliate per ottenere piccoli spiccioli, da cui deriva il termine "spiccioli".</li>
+    <li>Il gold standard, un sistema che lega la moneta al valore dell'oro, è stato abbandonato durante il XX secolo.</li>
+</ul>
+
+<h1>L'impatto della moneta sull'economia</h1>
+La <dfn>moneta</dfn> ha trasformato le economie moderne, consentendo:
+<ul>
+    <li><b>Commercio internazionale:</b> Una valuta comune semplifica gli scambi tra paesi.</li>
+    <li><b>Politiche monetarie:</b> Gli stati possono influenzare l'economia attraverso l'offerta di moneta.</li>
+    <li><b>Integrazione economica:</b> Ha reso possibile mercati globali più integrati.</li>
+</ul>
+
+<footer>Autore: Andrea Passantino 4°G</footer>
+</main>
+
+
+<button id="back-to-top" onclick="scrollToTop()">Torna su</button>
+<script>
+// Funzione per scrollare verso l'alto
+function scrollToTop() {
+    window.scrollTo({top: 0, behavior: 'smooth'});
+}
+</script>
+</body>
+
+</html>
